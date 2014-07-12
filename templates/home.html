@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<title>Habla-Me</title>
+	<style type="text/css">
+		body, html{
+			margin: 0 auto;
+			text-align: center;
+		}
+		form{
+			display: table-cell;
+			vertical-align: middle;
+		}
+	</style>
+</head>
+<body>
+	<div style="position:absolute;display:table;width:99%;height:100%;">
+		<form action="" method="post" accept-charset="utf-8">
+			<input type="text" name="word" placeholder="escribe una palabra :)" required autocomplete="off">
+			<button type="submit">Obtener voz!</button>	
+			{%if word %}
+				<h3>
+				{% if url_sound %}
+					<a href="{{ url_sound }}" target="_blank">Escuchar o descargar!</a>		
+					{% else %}
+					No puedo pronunciarlo :(
+				{% endif %}					
+				</h3>
+			{% endif %}
+		</form>		
+	</div>
+</body>
+</html>
